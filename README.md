@@ -1,6 +1,21 @@
 # chess-game
 Contains following homeworks:
 
+HW 11 - Files
+
+You are given several chess board configurations along with the next player to move. Find the move which results in checkmate. A player is in checkmate if any move he makes cannot prevent the opponent from taking his king on the next move. All pieces can move, including pawns, knights and kings. Note, that a player cannot leave his king vulnerable to attack (cannot expose the king to check).
+
+The board configurations should be read from a binary file called chess_in.bin. This file contains the number n represented as a single byte, which is the number of configurations. A number called key follows, represented as a single byte. Then we have n configurations which are each a FEN string and a character indicating the next player (w for white, b for black). The characters in the file must be decrypted by applying the xor operation with the given key on each individual character. There are no white-space characters in the file and each string is terminated with the null character (after decryption).
+
+For each configuration determine the move which results in checkmate and print it as a line in the output text file called chess_out.txt. Each move should be printed in the format (source column, source row) - (destination column, destination row), for example like: a1-a2. All processing should be done in a function with signature: void run_tests().
+
+Constraints: 0 < n <= 250
+all given FEN strings are correct table positions;
+no configuration requires special moves like promotion, castling, or en-passant;
+for every configuration the solution exists and it is unique.
+
+You can check your implementation on a sample input file chess_sample_in.bin and compare your results with the output file chess_sample_out.txt from here. Your uploaded solutions will be tested on a different file. Please, respect the file names from above.
+
 HW 5 - Modular programming
 
 You will be developing a chess application. If you are not familiar with the move rules you can look them up. For now, we are only interested in representing the table, so check:
